@@ -13,5 +13,12 @@ public class Checkout {
 			Product product = new Product(skuid);
 			products.add(product);
 		}
+		int totalPrice = calculateTotalPrice(products);
+		System.out.println("Total Price:" + totalPrice);
+		skuInput.close();
+	}
+
+	private int calculateTotalPrice(List<Product> products) {
+		return 0;
 	}
 }

@@ -1,5 +1,8 @@
 
 public class Product {
+	Product() {
+
+	}
 
 	Product(char skuid) {
 		this.skuid = skuid;

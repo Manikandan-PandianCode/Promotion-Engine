@@ -26,6 +26,20 @@ public class CheckoutTest {
 		int totalPrice = checkoutTest.calculateTotalPrice(listProduct);
 		assertEquals(130, totalPrice);
 	}
+	
+	@Test
+	public void testPromotion2() {
+		List<Product> listProduct = new ArrayList();
+		Product producta = new Product();
+		producta.setSkuid('C');
+		Product producta1 = new Product();
+		producta1.setSkuid('D');
+
+		listProduct.add(producta);
+		listProduct.add(producta1);
+		int totalPrice = checkoutTest.calculateTotalPrice(listProduct);
+		assertEquals(30, totalPrice);
+	}
 
 	@Test
 	public void testScenarioA() {

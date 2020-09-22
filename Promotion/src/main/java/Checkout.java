@@ -11,6 +11,8 @@ public class Checkout {
 		int priceofB = 30;
 		int counterC = 0;
 		int priceofC = 20;
+		int counterD = 0;
+		int priceofD = 20;
 
 		for (Product product : products) {
 			if ((String.valueOf(product.getSkuid()).equalsIgnoreCase("A")))
@@ -23,7 +25,9 @@ public class Checkout {
 		int totalPriceofA = (countofA / 3) * 130 + (countofA % 3 * priceofA);
 		int totalPriceofB = (countofB / 2) * 45 + (countofB % 2 * priceofB);
 		int totalPriceofC = (counterC * priceofC);
-		return totalPriceofA + totalPriceofB + totalPriceofC;
+		int totalPriceofD = (counterD * priceofD);
+
+		return totalPriceofA + totalPriceofB + totalPriceofC + totalPriceofD;
 
 	}
 }

@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Checkout {
 
@@ -12,7 +10,7 @@ public class Checkout {
 		int counterC = 0;
 		int priceofC = 20;
 		int counterD = 0;
-		int priceofD = 20;
+		int priceofD = 15;
 
 		for (Product product : products) {
 			if ((String.valueOf(product.getSkuid()).equalsIgnoreCase("A")))
@@ -21,13 +19,19 @@ public class Checkout {
 				countofB = countofB + 1;
 			else if ((String.valueOf(product.getSkuid()).equalsIgnoreCase("C")))
 				counterC = counterC + 1;
+			else if ((String.valueOf(product.getSkuid()).equalsIgnoreCase("D")))
+				counterD = counterD + 1;
 		}
 		int totalPriceofA = (countofA / 3) * 130 + (countofA % 3 * priceofA);
 		int totalPriceofB = (countofB / 2) * 45 + (countofB % 2 * priceofB);
 		int totalPriceofC = (counterC * priceofC);
 		int totalPriceofD = (counterD * priceofD);
 
-		return totalPriceofA + totalPriceofB + totalPriceofC + totalPriceofD;
-
+		if (totalPriceofC == 0 || totalPriceofD == 0)
+			return totalPriceofA + totalPriceofB + totalPriceofC + totalPriceofD;
+		else {
+			int totalPriceofCD = (counterC + counterD / 2) * priceofB;
+			return totalPriceofA + totalPriceofB + totalPriceofCD;
+		}
 	}
 }
